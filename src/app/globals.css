@@ -1,12 +1,20 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1F2937;
+  --primary: #2563eb;
+  --red: #DC2626;
+  --orange: #F59E0B;
+  --green: #16A34A;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0F172A;
+    --foreground: #E5E7EB;
+    --primary: #2563eb;
+    --red: #DC2626;
+    --orange: #F59E0B;
+    --green: #16A34A;
   }
 }
 
@@ -23,10 +31,12 @@ body {
 body {
   min-height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,6 +45,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: all 0.18s ease;
 }
 
 a {
@@ -46,4 +57,83 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.pageContainer {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+section{
+  width: 95%;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ===== Header ===== */
+.header{
+  width: 100%;
+  position: fixed;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.headerDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 20px;
+  flex: 1;
+  gap: 25px;
+}
+
+.hLogo{
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+#search{
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--background);
+  border: 1px solid #808080;
+  color: var(--foreground);
+  width: 100%;
+  max-width: 500px;
+}
+
+.navLink{
+  color: var(--foreground);
+  font-size: 16px;
+}
+
+.navLinkBtn{
+  color: var(--background);
+  font-size: 16px;
+  background-color: var(--foreground);
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.navLinkBtn:hover{
+  background-color: var(--primary);
+  transform: scale(1.1);
 }
