@@ -1,4 +1,4 @@
-import { substances } from "@/data/substances";
+import { createClient } from "@/lib/supabase/server";
 
 // Typ für params (NEUES Next.js Verhalten)
 type Props = {
@@ -10,31 +10,28 @@ type Props = {
 export default async function SubstancePage({ params }: Props) {
   const { slug } = await params;
 
-  const substance = substances.find((s) => s.slug === slug);
+  const supabase = createClient();
 
-  if (!substance) {
-    return (
-      <div className="p-6">
-        <h1 className="text-xl font-semibold">Nicht gefunden</h1>
-        <p>Diese Substanz existiert nicht.</p>
-      </div>
-    );
-  }
+  const { data } = await supabase
+    .from("substances")
+    .select("*")
+    .eq("slug", slug)
+    .single();
 
   return (
     <div className="pageContainer">
       {/* Titel */}
-      <h1 className="text-3xl font-bold">{substance.name}</h1>
+      <h1 className="text-3xl font-bold">{data?.name}</h1>
 
       {/* Kategorie */}
       <div className="text-sm text-gray-500">
-        Kategorie: {substance.category}
+        Kategorie: {data?.category}
       </div>
 
       {/* Wirkstoff */}
       <div className="p-4 rounded-xl bg-gray-100">
         <h2 className="font-semibold mb-2">Wirkstoff</h2>
-        <p>{substance.activeSubstance}</p>
+        <p>{data?.active_substance}</p>
       </div>
 
       {/* Platzhalter für später */}
