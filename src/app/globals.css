@@ -70,7 +70,7 @@ a {
 }
 
 section{
-  width: 95%;
+  width: 95% !important;
   border: 1px solid rgba(128, 128, 128, 0.2);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

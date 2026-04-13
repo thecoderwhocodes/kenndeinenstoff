@@ -1,0 +1,39 @@
+.overviewHeader{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+
+.overviewHeader > :first-child{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overviewHeader > :last-child{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overviewImage{
+    width: 75%;
+    object-fit: cover;
+}
+
+.overviewInfoGrid{
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    row-gap: 12px;
+    column-gap: 24px;
+}
+
+.overviewInfoLabel{
+    font-weight: bold;
+}
