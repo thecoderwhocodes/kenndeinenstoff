@@ -24,7 +24,8 @@
 
 .overviewImage{
     width: 75%;
-    object-fit: cover;
+    max-height: 100%;
+    object-fit:contain;
 }
 
 .overviewInfoGrid{
@@ -35,5 +36,10 @@
 }
 
 .overviewInfoLabel{
+    font-weight: normal;
+    color: rgb(206, 206, 206);
+}
+
+.overviewInfoValue{
     font-weight: bold;
 }
